@@ -1,0 +1,56 @@
+/*!
+ * Common
+ */
+
+//Breakpoint
+$breakpoints: (
+  's': (
+    max-width: 559px,
+  ),
+  'm': (
+    max-width: 768px,
+  ),
+  'sp': (
+    max-width: 559px,
+  ),
+  'tab': (
+    max-width: 959px,
+  ),
+  'pc': (
+    min-width: 960px,
+  ),
+) !default;
+
+@mixin mq($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media screen and #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @error "ブレークポイント未定義";
+  }
+}
+
+//FontSize
+@mixin fz($size: 16) {
+  //font-size: $size + px;
+  font-size: ($size / 10) + rem;
+}
+
+//Color
+$white: #fff;
+$mint: #42b984;
+$l-mint: #e2f5ed;
+$gray: #ccc;
+$l-gray: #f7f7f7;
+$black: #273849;
+$sumi: #475050;
+$yellow: yellow;
+
+html {
+  //10px
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+}

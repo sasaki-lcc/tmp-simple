@@ -1,0 +1,43 @@
+@import '_ress.scss';
+@import '_common.scss';
+
+#app {
+  background: #ddd;
+}
+
+body {
+  background: green;
+  padding: 100px;
+  color: $black;
+
+  @include mq(m) {
+    background: green;
+  }
+
+  @include mq(s) {
+    background: red;
+  }
+}
+
+.main {
+  display: flex;
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 16px;
+}
+
+.inner {
+  width: 100%;
+}
+
+.interview {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: wrap;
+
+  li {
+    border: 1px solid;
+    width: 33.3%;
+    @include fz(40);
+  }
+}
